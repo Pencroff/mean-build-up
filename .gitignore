@@ -60,3 +60,6 @@ node_modules/
 bower_components/
 coverage/
 public/
+
+config/main.config.js
+client/lib
