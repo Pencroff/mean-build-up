@@ -10,7 +10,10 @@ angular
 
     .config(['$routeProvider',function() {
       $routeProvider.when('/', {
-        templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl'
+        templateUrl: 'index.html',
+        controller: 'HomeController'
+      })
+      .otherwise({
+        redirectTo: '/'
       });
     }])
