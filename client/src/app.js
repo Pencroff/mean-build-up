@@ -2,18 +2,18 @@
  * Created by Pencroff on 11-Oct-15.
  */
 angular
-    .module('angular-buildup', [])
+    .module('angular-buildup', ['ngRoute'])
 
     .run(function() {
         console.log('Angular app have runned');
     })
 
-    .config(['$routeProvider',function() {
+    .config(['$routeProvider', function($routeProvider) {
       $routeProvider.when('/', {
-        templateUrl: 'index.html',
-        controller: 'HomeController'
+        templateUrl: 'src/views/home.html',
+        controller: 'HomeController as vm'
       })
       .otherwise({
         redirectTo: '/'
       });
-    }])
+    }]);
