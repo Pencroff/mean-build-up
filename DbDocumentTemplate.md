@@ -1,5 +1,5 @@
 {“rooms”: [
-       {“roomID”: 1, “area”: “secondFlor”, “capacity”: 3, “doubleBed”: true, “standard”: “premium”, “price”:”128.34”, "url": "/local/test/myimageroom.jpg"}
+       {“roomID”: 1, “area”: “secondFlor”, “capacity”: 3, “doubleBed”: true, “standard”: “premium”, “price”:”128.34”, "urlImage": "/local/test/myimageroom.jpg"}
 ]}
 
 {“bookings”: [
