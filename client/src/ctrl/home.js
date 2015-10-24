@@ -17,10 +17,13 @@
         ////////////////
 
         function activate() {
-            var booking = $resource('http://localhost:8070/public/booking');
-            booking.get({}, function(booking){
-              console.log('test');
-              console.log(booking.data);
+            var bookings = $resource('http://localhost:8070/public/booking');
+            bookings.get({}, function(bookings){
+              console.log('bookings data: ', bookings.data);
+            });
+            var rooms = $resource('http://localhost:8070/public/room');
+            rooms.get({}, function(rooms){
+              console.log('rooms data: ', rooms.data);
             });
         }
     }
