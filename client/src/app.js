@@ -2,7 +2,7 @@
  * Created by Pencroff on 11-Oct-15.
  */
 angular
-    .module('angular-buildup', ['ngRoute', 'ngResource'])
+    .module('angular-buildup', ['ngRoute', 'ngResource', 'models'])
 
     .run(function() {
         console.log('Angular app have runned');
