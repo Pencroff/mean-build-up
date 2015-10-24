@@ -1,18 +1,45 @@
 <div >
     <h1>Hello!</h1>
-    <div ng-repeat="r in room.rooms">
-        <div>{{r.roomID}}</div>
-        <div>{{r.area}}</div>
-        <div>{{r.capacity}}</div>
-        <div>{{r.doublebed}}</div>
-        <button name="Booking">Booking</button>
-    </div>
+
     <div>
         <h1>Booking</h1>
-        <form>
-            <label>First Name:</label><input type="text" ng-model="room.roomData.name" />
+        <form name="formBook" novalidate>
+            <div>
+                <label>Room Type:</label>
+                <select  ng-model="room.filter.standard" 
+                         ng-options="item.id as item.name for item in room.types track by item.id">
+                    <option value="">- Types -</option>
+                </select>
+            </div>
+            <div><label>Number of Guests:</label>
+                <select ng-model="room.filter.capacity" 
+                        ng-options="item.id as item.name for item in room.guests track by item.id">
+                    <option value="">- Guest -</option>
+                </select></div>
+            <div><label>From:</label><input type="date" name="datefrom" ng-model="room.filter.startDate"><label>
+                    To:</label><input type="date" name="dateto" ng-model="room.filter.endDate"></div>
+
+            <div><button ng-click="room.search()">Search</button></div>
+            <div>
+                <label>Name:</label>
+                <input required type="text" name="name" ng-model="room.filter.bookingHolderName">
+                <span ng-if="formBook.name.$error.required && room.bookClicked">Please, Fill this field.</span>
+            </div>
+            <div>
+                <label>E-mail:</label>
+                <input required type="text" name="email" ng-model="room.filter.bookingHolderEmail">
+                <span ng-if="formBook.email.$error.required && room.bookClicked">Please, Fill this field.</span>
+            </div>    
+            
         </form>
 
+        <div ng-repeat="r in room.rooms">
+            <div>{{r.roomID}}</div>
+            <div>{{r.area}}</div>
+            <div>{{r.capacity}}</div>
+            <div>{{r.doublebed}}</div>
+            <button ng-click="room.book(formBook)">Book</button>
+        </div>
     </div>
 </div>
 
