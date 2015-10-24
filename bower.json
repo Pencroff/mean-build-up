@@ -22,6 +22,7 @@
     "angular-route": "~1.4.7",
     "angular-cookie": "~4.0.9",
     "angular-bootstrap": "~0.14.2",
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "ng-resource": "~0.0.2"
   }
 }
