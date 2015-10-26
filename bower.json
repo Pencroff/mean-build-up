@@ -1,0 +1,28 @@
+{
+  "name": "mean-buildup",
+  "version": "0.0.0",
+  "homepage": "https://github.com/alanquigley/mean-buildup",
+  "authors": [
+    "alanquigley <alan.quigley@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-sanitize": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-cookie": "~4.0.9",
+    "angular-bootstrap": "~0.14.2",
+    "bootstrap": "~3.3.5",
+    "angular-resource": "~1.4.7"
+  }
+}

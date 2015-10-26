@@ -6,19 +6,19 @@
 
 exports.server = {
     port: 8070,
-    tokenSecret: 'bla-bla-bla',
+    tokenSecret: 'X6hasA89uij',
     user: {
-        name: 'Brad Pitt',
-        login: 'brad-pitt',
-        password: 'magic-password',
+        name: 'Buildup User',
+        login: 'buildup',
+        password: 'buildup234',
         logged: true
     },
     mongoConf: {
-        login: 'user',
-        password: 'password',
-        server: 'db.mongolab.com',
-        port: '27072',
-        dbName: 'angular-buildup'
+        login: 'buildup-user',
+        password: 'buildup234',
+        server: 'ds047592.mongolab.com',
+        port: '47592',
+        dbName: 'gryffindor'
     },
     mongoUri: {
         $ref: 'server.mongoConf',
