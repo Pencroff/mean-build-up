@@ -4,7 +4,7 @@
     var instance, token;
 
     function AccessTokenManager(){
-      if (!!instance) {
+      if (!instance) {
         instance = {
             get: function(){ return token;},
             set: function(newToken){ token = newToken;}
