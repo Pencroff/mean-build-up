@@ -3,7 +3,7 @@
  */
 var app = angular.module('angular-buildup', ['ngRoute','ngResource']);
 
-       app.config(['$routeProvider',function($routeProvider){
+       app.config(['$routeProvider','$httpProvider',function($routeProvider,$httpProvider){
                 $routeProvider.when('/',{
                   templateUrl:'/static/src/room/roomList.html',
                   controller:'RoomController as room'
@@ -16,6 +16,9 @@ var app = angular.module('angular-buildup', ['ngRoute','ngResource']);
                   templateUrl: '/static/src/management/room/managementRoomList.html',
                   controller: 'ManagementRoomController as vm'
                 });
+                
+
+                $httpProvider.interceptors.push('ResourceInterceptor');
         }])
         .run(function () {
             console.log('Angular app have runned');
