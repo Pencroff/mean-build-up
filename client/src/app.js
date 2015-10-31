@@ -15,6 +15,10 @@ var app = angular.module('angular-buildup', ['ngRoute','ngResource','ngCookies']
                 .when('/management/room',{
                   templateUrl: '/static/src/management/room/managementRoomList.html',
                   controller: 'ManagementRoomController as vm'
+                })
+                .when('/management/booking', {
+                  templateUrl: '/static/src/management/booking/managementBookingList.html',
+                  controller: 'ManagementBookingController as vm'
                 });
                 
 

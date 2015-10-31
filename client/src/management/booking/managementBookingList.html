@@ -1,0 +1,17 @@
+<h1>Bookings</h1>
+<div>
+  <label>Filter by</label>
+  <input type="text"/>
+</div>
+
+<div ng-repeat="booking in vm.bookings">
+  <div>Booking #{{booking.bookingID}}</div>
+  <div class="row">
+    <div class="col-md-2">From</div>
+    <div class="col-md-2">{{booking.startDate}}</div>
+    <div class="col-md-2">To</div>
+    <div class="col-md-2">{{booking.endDate}}</div>
+    <div class="col-md-2">Nights</div>
+    <div class="col-md-2">{{booking.nights}}</div>
+  </div>
+</div>
