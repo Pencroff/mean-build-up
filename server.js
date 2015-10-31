@@ -39,6 +39,7 @@ app.use('/public', publicApi);
 app.use('/protected', protectedApi);
 
 app.use('/static', express.static('./client'));
+app.use('/local', express.static('./client/assets/'));
 
 app.use(function(req, res, next){
     res.status(404);
