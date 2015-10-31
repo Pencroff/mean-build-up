@@ -1,17 +1,19 @@
-
+(function () {
 var resource;
 
 ManagementRoomService.$inject = ['$resource'];
 
-function ManagementRoomService($resource) {
+
+
+function ManagementRoomService($resource,accessTokenManager) {
   if (!resource) {
     resource = $resource('/protected/room/:id',{id: '@id'},
     {
-      'get': {method: 'GET', headers: {'x-access-token': ''}},
+      'get': {method: 'GET'},
       'create': {method: 'POST'},
       'update': {method: 'PUT'},
       'remove': {method: 'DELETE'},
-      'query': {method: 'GET', isArray: false}
+      'query': {method: 'GET',isArray: false}
 
     });
   }
@@ -19,3 +21,5 @@ function ManagementRoomService($resource) {
 }
 
 app.factory('ManagementRoomService', ManagementRoomService);
+
+})();
