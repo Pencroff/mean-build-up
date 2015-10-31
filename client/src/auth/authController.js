@@ -1,14 +1,14 @@
 
-AuthController.$inject = ['AuthService', 'AccessTokenManager'];
+AuthController.$inject = ['AuthService', 'AccessTokenManager', '$location'];
 
-function AuthController(authService, accessTokenManager) {
+function AuthController(authService, accessTokenManager, $location) {
   var vm = this;
 
   vm.login = function () {
     authService.login(vm.user)
     .success(function(res){
       accessTokenManager.set(res.token);
-      alert(accessTokenManager.get());
+      $location.path('/management/room');
     })
     .error(function(err){
       alert('err');
