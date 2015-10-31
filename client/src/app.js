@@ -1,7 +1,7 @@
 /**
  * Created by Pencroff on 11-Oct-15.
  */
-var app = angular.module('angular-buildup', ['ngRoute','ngResource']);
+var app = angular.module('angular-buildup', ['ngRoute','ngResource','ngCookies']);
 
        app.config(['$routeProvider','$httpProvider',function($routeProvider,$httpProvider){
                 $routeProvider.when('/',{

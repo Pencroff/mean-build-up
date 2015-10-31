@@ -4,6 +4,8 @@ app.factory('ResourceInterceptor', ['AccessTokenManager',
       request: function (config) {
     	  if(!!accessTokenManager.get()){
     		  config.headers['x-access-token'] = accessTokenManager.get(); 
+    	  }else{
+    		  console.log('no token');
     	  }
     	  
     	  return config;

@@ -1,13 +1,18 @@
 (function () {
     'use strict';
 
+
+    AccessTokenManager.$inject = ['$cookieStore'];
     var instance, token;
 
-    function AccessTokenManager(){
+    function AccessTokenManager($cookieStore){
       if (!instance) {
         instance = {
-            get: function(){ return token;},
-            set: function(newToken){ token = newToken;}
+            get: function(){ return token || $cookieStore.get('token');},
+            set: function(newToken){ 
+            	token = newToken;
+            	$cookieStore.put('token',token);
+            }
         };
       }
 
