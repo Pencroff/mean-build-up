@@ -61,3 +61,8 @@ bower_components/
 coverage/
 public/
 nbproject/private/private.xml
+
+#ignore eclipse files
+.buildpath
+.project
+.settings/
