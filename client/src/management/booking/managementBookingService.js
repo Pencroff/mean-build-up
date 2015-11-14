@@ -6,7 +6,7 @@ function ManagementBookingService($resource, accessTokenManager){
   if (!resource){
     resource = $resource('/protected/booking/:id',{id: '@id'},
     {
-      'get': {method: 'GET', headers: {'x-access-token': ''}},
+      'get': {method: 'GET', headers: {'x-access-token': accessTokenManager.get()}},
       'create': {method: 'POST'},
       'update': {method: 'PUT'},
       'remove': {method: 'DELETE'},
