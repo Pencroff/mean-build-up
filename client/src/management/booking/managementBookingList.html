@@ -1,10 +1,10 @@
 <h1>Bookings</h1>
 <div>
   <label>Filter by</label>
-  <input type="text"/>
+  <input type="text" ng-model="search"/>
 </div>
 
-<div ng-repeat="booking in vm.bookings">
+<div ng-repeat="booking in vm.bookings | filter:search">
   <h3>Booking #{{ booking.bookingID }}</h3>
   <div>Made on {{ booking.date | date: 'dd/MM/yyyy' }}</div>
   <div class="row">
@@ -13,14 +13,19 @@
     <div class="col-md-4">Nights {{ booking.nights }}</div>
   </div>
   <div>Guests {{ booking.guests }}</div>
-  <div>Price per night {{ booking.pricePerNight | currency }}</div>
   <div>Price total {{ booking.amount | currency }}</div>
+  <div>Manager Note {{ booking.managersNote }}</div>
 
+  <h4>Contact</h4>
+  <div>Holder Name {{ booking.bookingHolderName }}</div>
+  <div>Holder E-mail {{ booking.bookingHolderEmail }}</div>
+  
   <h4>Room Details</h4>
   <div>Area {{ booking.area }}</div>
   <div>Standard {{ booking.standard }}</div>
   <div>Capacity {{ booking.capacity }}</div>
   <div>Double bed {{ booking.doubleBed }}</div>
-  <div>Price {{ booking.pricePerNight }}</div>
-  <th />
+  <div>Price {{ booking.pricePerNight | currency }}</div>
+  <button ng-click="vm.edit(booking)">Edit Booking</button>
+  <button ng-click="vm.cancel(booking)">Cancel Booking</button>
 </div>
