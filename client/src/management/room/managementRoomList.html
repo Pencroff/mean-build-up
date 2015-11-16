@@ -1,0 +1,15 @@
+<h1>Rooms</h1>
+<a href="app#/management/booking">Bookings</a>
+<div>
+  <label>Filter by</label>
+  <input type="text"/>
+</div>
+
+<div ng-repeat="room in vm.rooms">
+  <div>{{room.roomID}}</div>
+  <div>{{room.area}}</div>
+  <div>{{room.capacity}}</div>
+  <div>{{room.doubleBed}}</div>
+  <div>{{room.standard}}</div>
+  <div>{{room.price}}</div>
+</div>

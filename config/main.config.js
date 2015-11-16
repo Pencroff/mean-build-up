@@ -15,10 +15,10 @@ exports.server = {
     },
     mongoConf: {
         login: 'user',
-        password: 'password',
-        server: 'db.mongolab.com',
-        port: '27072',
-        dbName: 'angular-buildup'
+        password: '123',
+        server: 'ds035844.mongolab.com',
+        port: '35844',
+        dbName: 'angularjsbuildup'
     },
     mongoUri: {
         $ref: 'server.mongoConf',

@@ -1,0 +1,61 @@
+<div >
+    <h1>Hello!</h1>
+    <a href="app#/auth">Login</a>
+
+    <div>
+        <h1>Booking</h1>
+        <form name="formBook" novalidate>
+            <div>
+                <label>Room Type:</label>
+                <select  ng-model="room.filter.standard"
+                         ng-options="item.id as item.name for item in room.types track by item.id">
+                    <option value="">- Types -</option>
+                </select>
+            </div>
+            <div><label>Number of Guests:</label>
+                <select ng-model="room.filter.capacity"
+                        ng-options="item.id as item.name for item in room.guests track by item.id">
+                    <option value="">- Guest -</option>
+                </select></div>
+            <div><label>From:</label><input type="date" name="datefrom" ng-model="room.booking.startDate"><label>
+                    To:</label><input type="date" name="dateto" ng-model="room.booking.endDate"></div>
+
+            <div><button ng-click="room.search()">Search</button></div>
+            <div>
+                <label>Name:</label>
+                <input required type="text" name="name" ng-model="room.booking.holderName">
+                <span ng-if="formBook.name.$error.required && room.bookClicked">Please, Fill this field.</span>
+            </div>
+            <div>
+                <label>E-mail:</label>
+                <input required type="text" name="email" ng-model="room.booking.holderEmail">
+                <span ng-if="formBook.email.$error.required && room.bookClicked">Please, Fill this field.</span>
+            </div>
+
+        </form>
+
+        <div ng-repeat="r in room.rooms">
+            <div class="row">
+              <div class="col-md-1">Area</div>
+              <div class="col-md-11">{{r.area}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-1">Standard</div>
+              <div class="col-md-11">{{r.standard}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-1">Capacity</div>
+              <div class="col-md-11">{{r.capacity}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-1">Double Bed</div>
+              <div class="col-md-11">{{r.doublebed}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-1">Price</div>
+              <div class="col-md-11">{{r.price | currency}}</div>
+            </div>
+            <button ng-click="room.book(formBook, r)">Book</button>
+        </div>
+    </div>
+</div>
